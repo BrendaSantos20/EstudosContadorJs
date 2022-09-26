@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "Exercicio contador",
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Roboto"
+	}
+}
