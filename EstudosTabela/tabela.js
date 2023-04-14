@@ -1,32 +1,35 @@
-const nome = document.querySelector('#input-nome')
-const idade = document.querySelector('#input-idade')
-const cpf = document.querySelector('#input-cpf')
+const inputNome = document.querySelector('#nome')
+const inputIdade = document.querySelector('#idade')
+const inputCpf = document.querySelector('#cpf')
 const botaoAdd = document.querySelector('.btn-add')
 const tabela = document.querySelector('.table')
+const imglixeira = document.querySelector('.img');
 
 
-botaoAdd.addEventListener('click', ()=> {
-    console.log('entrou')
-
-    if (nome.value == ''|| idade.value == '' || cpf.value == ''){
-        window.alert("Preencha todos os campos.")
+botaoAdd.addEventListener('click', ()=>{
+    if (inputNome.value == ''|| inputIdade.value == '' || inputCpf.value == ''){
+    window.alert('Preencha todos os campos.')
+    return
     }
-    else {
-       
     tabela.innerHTML += `
-        <tr class="tr"> 
-            <td>${nome.value}</td>   
-            <td>${idade.value}</td> 
-            <td>${cpf.value}</td>
-        </tr>
-    `;
-    nome.value = '';
-    idade.value = '';
-    cpf.value= '';
-    }
+        <tr class="tr">
+            <th>${inputNome.value}</th>
+            <th>${inputIdade.value}</th>
+            <th>${inputCpf.value} <img class="img" src="lixeira-de-reciclagem.png" alt=""</th> 
+        </tr> `
+
+    inputNome.value = '';
+    inputCpf.value = '';
+    inputIdade.value = '';
 })
 
-
-
+imglixeira.addEventListener('click',()=>{
+    tabela.innerHTML -= `
+        <tr class="tr">
+            <th>${inputNome.value}</th>
+            <th>${inputIdade.value}</th>
+            <th>${inputCpf.value} <img class="img" src="lixeira-de-reciclagem.png" alt=""</th> 
+        </tr> `
+})
 
 
